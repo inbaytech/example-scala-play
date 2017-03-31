@@ -1,0 +1,22 @@
+@(idqid: String, idqemail: String, responseCode: Option[String], description: Option[String])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inBay Scala OAuth 2.0 Client</title>
+</head>
+<body>
+<div>
+    <h2>User Info</h2>
+    <p>User ID: @idqid</p>
+    <p>Email: @idqemail</p>
+    @if(description.isEmpty){
+    <a href="/push/@idqid">Send Push Notification</a>
+    }else {
+    <p>Response Code: @responseCode</p>
+    <p>Description: @description</p>
+    }
+
+</div>
+</body>
+</html>
